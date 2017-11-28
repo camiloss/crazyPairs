@@ -1,10 +1,10 @@
 <template>
-  <div >
-    <h1 v-on:click="handleClick"> {{symbol}}</h1>
-    
+  <div class="container-symbol">
+    <h1 v-on:click="handleClick" class="card-symbol"> {{symbol}}</h1>
+
   </div>
-  
-  
+
+
 </template>
 
 <script>
@@ -28,7 +28,16 @@ export default Vue.component('SymbolPoint', {
 </script>
 
 <style lang="scss">
-
+.container-symbol{
+    display:inline-block;
+    margin-left: 1em;
+}
+.card-symbol {
+    width: 4em;
+    height: 4em;
+    border-radius: 50%;
+    border: 2px dotted;
+    line-height: 4em;
+    background: aliceblue;
+}
 </style>
-
-

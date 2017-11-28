@@ -1,25 +1,35 @@
 <template>
   <div id="app">
-  
-    <h1>{{ msg }}</h1>
-    <h2>Essential Links</h2>
-    <Card></Card>
+  <button @click="initGame">new Game</button>
+  <button @click="takeCard">take Card</button>
+    <div class="main-container">
+        <div class="col">
+
+            <h1>CARD DECK</h1>
+            <Card :card="topCard"></Card>
+        </div>
+        <div class="col">
+            <h1>PLAYER CARD</h1>
+            <Card :card="playerCard" @selectedSymbolCard="selectSymbol"></Card>
+        </div>
+    </div>
   </div>
 </template>
 
 <script>
+import { mapGetters, mapActions } from 'vuex'
 import Card from './components/Card.vue'
 
 export default {
-  name: 'app',
-  data () {
-    return {
-      msg: 'Welcome to Your Vue.js App',
-      symbol:{
-        id:'1'
-      }
-    }
-  }
+  computed: mapGetters([
+    'topCard',
+    'playerCard'
+  ]),
+  methods:mapActions([
+    'initGame',
+    'takeCard',
+    'selectSymbol'
+  ])
 }
 </script>
 
@@ -33,21 +43,11 @@ export default {
   margin-top: 60px;
 }
 
-h1, h2 {
-  font-weight: normal;
-}
 
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-
-a {
-  color: #42b983;
+.main-container{
+    display:flex;
+    .col{
+        flex:1;
+    }
 }
 </style>
