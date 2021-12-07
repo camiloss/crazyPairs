@@ -2,10 +2,11 @@ FROM node:8.7-alpine
 
 WORKDIR /home/app
 
-RUN npm install -g create-react-app
-ADD package.json /home/app
-RUN npm install
-ADD . /home/app
+
+COPY package*.json /home/app
+RUN npm ci
+# Bundle app source
+COPY . .
 
 CMD ["npm", "start"]
 
