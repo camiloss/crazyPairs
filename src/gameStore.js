@@ -2,12 +2,12 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 
-import firebase from 'firebase'
+// import firebase from 'firebase'
 import _ from 'lodash'
-import 'firebase/firestore'
-import config from './config'
+// import 'firebase/firestore'
+// import config from './config'
 
-Vue.prototype.$firebase = firebase.initializeApp(config)
+// Vue.prototype.$firebase = firebase.initializeApp(config)
 
 Vue.use(Vuex)
 
@@ -76,7 +76,7 @@ const state = {
   cardsDeck: [],
   playerCard: null,
   playMatchID: 'TEST',
-  db: firebase.firestore(),
+  // db: firebase.firestore(),
   playMatch: null,
   playerName: 'PLAYER1'
 }
@@ -135,8 +135,8 @@ const actions = {
   },
 
   selectSymbol ({ commit }, cardAction) {
-    if (this.getters.playerCard.symbols.indexOf(cardAction.selectedSymbol) != -1 &&
-                this.getters.topCard.symbols.indexOf(cardAction.selectedSymbol) != -1) { this.dispatch('takeCard')}
+    if (this.getters.playerCard.symbols.indexOf(cardAction.selectedSymbol) !== -1 &&
+                this.getters.topCard.symbols.indexOf(cardAction.selectedSymbol) !== -1) { this.dispatch('takeCard') }
   },
 
   incrementAsync ({ commit }) {

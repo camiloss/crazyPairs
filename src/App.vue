@@ -25,7 +25,7 @@ export default {
     'topCard',
     'playerCard'
   ]),
-  methods:mapActions([
+  methods: mapActions([
     'initGame',
     'takeCard',
     'selectSymbol'
@@ -33,7 +33,7 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style >
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -46,8 +46,9 @@ export default {
 
 .main-container{
     display:flex;
-    .col{
-        flex:1;
-    }
+
+}
+.main-container .col{
+    flex:1;
 }
 </style>

@@ -1,7 +1,7 @@
 <template>
   <div>
     <h4 v-if="authenticated">
-        You are logged in!
+      Authenticated!
     </h4>
     <h4 v-if="!authenticated">
       You are not logged in! Please <a @click="auth.login()">Log In</a> to continue.
@@ -10,10 +10,12 @@
 </template>
 
 <script>
-  export default {
-    name: 'home',
-    props: ['auth', 'authenticated']
-  }
+// import App from '../../App.vue'
+
+export default {
+  name: 'home',
+  props: ['auth', 'authenticated']
+}
 </script>
 
 <style>
